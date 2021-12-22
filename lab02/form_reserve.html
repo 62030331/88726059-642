@@ -1,58 +1,68 @@
 <!DOCTYPE html>
 <html lang="en" style="background-color: skyblue;">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Hotel Booking</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Hotel Booking</title>
 </head>
+
 <body>
- <h3>Hotel Booking</h3>
- <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/642/88726059/services/post.php">
- <label for="roomtype">Room Type:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
- <select name="roomtype" style="width:355px">
- <option value="0">--Select one--</option>
- <option value="Standard">Standard</option>
- <option value="Luxury">Luxury</option>
- <option value="Deluxe">Deluxe</option>
- </select>
- <br><br>
- <label for="numguest" >Number of Guests:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
- <select name="numguest" style="width:355px">
- <option value="0">--Select one--</option>
- <option value="1-2">1-2</option>
- <option value="3-4">3-4</option>
- <option value="5-6">5-6</option>
- <option value="7-8">7-8</option>
- </select>
- <br><br>
- <label for="name">Name:</label>&nbsp;&nbsp; &nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
- <input type="text" name="fname" placeholder="First" id="First">&nbsp;&nbsp;
- <input type="text" name="lname" placeholder="Last"id="Last">
- <br><br>
- <label for="name">E-mail:</label>&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
- <input type="email" id="mail" name="email" placeholder="qqq@uiu.com" style="width:350px">
- <br><br>
- <label for="name">Arrival:</label>&nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
- <input type="date" name="arrivaldate" id="arrivaldate">&nbsp;&nbsp;
- <input type="time" name="arrivaltime" id="arrivaltime">
- <br><br>
- <label for="name">Departure:</label>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
- <input type="date" name="departuredate" id="departuredate">&nbsp;&nbsp;
- <input type="time" name="departuretime" id="departuretime">
- <br><br>
- <label for="sex">Free Pickup:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
- <input type="radio" name="pickup" id="pickup" value="Yes">Yes,Sure!! <br><br>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
- <input type="radio" name="pickup" id="pickup" value="No">No,I already rentedd a car.
- <br><br>
- <label for="name">Flight Number:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
- <input type="text" name="flightnum" placeholder="A44444" id="flightnum" style="width:355px">
- <br><br>
- <div>
-    <label for="msg">Other requests:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
-    <textarea id="msg" name="otherreq" style="width:355px" width="50%" hidgth="200%"></textarea>
-    </div>
-    <br><br>
- <input type="submit" value="Complete Reservation" style="background-color: slateblue;">
- </form>
+   <h3>Hotel Booking</h3>
+   <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/642/88726059/services/post.php">
+      <label for="roomtype">Room Type:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;
+      <select name="roomtype" style="width:355px">
+         <option value="0">--Select one--</option>
+         <option value="Standard">Standard</option>
+         <option value="Luxury">Luxury</option>
+         <option value="Deluxe">Deluxe</option>
+      </select>
+      <br><br>
+      <label for="numguest">Number of Guests:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      <select name="numguest" style="width:355px">
+         <option value="0">--Select one--</option>
+         <option value="1-2">1-2</option>
+         <option value="3-4">3-4</option>
+         <option value="5-6">5-6</option>
+         <option value="7-8">7-8</option>
+      </select>
+      <br><br>
+      <label for="name">Name:</label>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      <input type="text" name="fname" placeholder="First" id="First">&nbsp;&nbsp;
+      <input type="text" name="lname" placeholder="Last" id="Last">
+      <br><br>
+      <label for="name">E-mail:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      <input type="email" id="mail" name="email" placeholder="qqq@uiu.com" style="width:350px">
+      <br><br>
+      <label for="name">Arrival:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+      <input type="date" name="arrivaldate" id="arrivaldate">&nbsp;&nbsp;
+      <input type="time" name="arrivaltime" id="arrivaltime">
+      <br><br>
+      <label for="name">Departure:</label>&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;
+      <input type="date" name="departuredate" id="departuredate">&nbsp;&nbsp;
+      <input type="time" name="departuretime" id="departuretime">
+      <br><br>
+      <label for="sex">Free Pickup:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      <input type="radio" name="pickup" id="pickup" value="Yes">Yes,Sure!! <br><br>&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+      &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
+      <input type="radio" name="pickup" id="pickup" value="No">No,I already rentedd a car.
+      <br><br>
+      <label for="name">Flight Number:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+      <input type="text" name="flightnum" placeholder="A44444" id="flightnum" style="width:355px">
+      <br><br>
+      <div>
+         <label for="msg">Other requests:</label>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;
+         <textarea id="msg" name="otherreq" style="width:355px" width="50%" hidgth="200%"></textarea>
+      </div>
+      <br><br>
+      <input type="submit" value="Complete Reservation" style="background-color: slateblue;">
+   </form>
 </body>
+
 </html>
