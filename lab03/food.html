@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: darkblue;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=he, initial-scale=1.0">
+    <title>FooD</title>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <style>
+        .item1 {
+            grid-area: header;
+        }
+
+        .item2 {
+            grid-area: menu;
+        }
+
+        .item3 {
+            grid-area: main;
+        }
+
+        .item4 {
+            grid-area: right;
+        }
+
+        .item5 {
+            grid-area: footer;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-areas:
+                'menu'
+            ;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+        }
+
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        body {
+            background-color: lightblue;
+        }
+
+        img {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>เมนูอาหารของโรมแรมจิ้งหรีด</h1>
+
+    <p>เมนูอาหารสำหรับวันที่ 32 กุมภาพันธ์ 2555 </p>
+    <div class="grid-container">
+
+        <div class="item2" width="20%" height="25%">เมนูอาหาร
+
+            <body>
+                <p style="text-align:left;"><img src="images/ปลา.jpg" alt="กระเพาะปลา" width="20%" height="25%" />
+                    <b>กระเพาะปลา</b><br>
+                <p style="text-align:left;">
+                    เมนูประจำของโต๊ะจีน ไม่ต้องพิถีพิถันอะไรมาก ฉันจึงเลือกกระเพาะปลาเหรียญเนื้อหนา
+                    ราคาย่อยเยาขึ้นมาหน่อย
+                    ใช้วิธีต้มล้างคราบมันนานๆ เพื่อทำให้กระเพาะปลานุ่มลงด้วย เมื่อสะอาดแล้วหั่นเป็นชิ้นพอคำ
+                    ผัดกับไข่ ถั่วงอก ผัดให้แห้ง เหยาะปิดท้ายด้วยน้ำมันงาให้หอมหวล
+                </p>
+
+                </p>
+                <br><br clear="all">
+                <p style="text-align:left;"><img src="images/กุ้ง.jpg" alt="กระเพาะปลา" width="20%" height="25%" />
+                    <b>กุ้งแช่น้ำปลา</b><br>
+                <p style="text-align:left;">
+                    เดิม!!มาจากเทศกาลตรุษจีน เมื่อหลาย100ปีก่อน_ที่เชิดสิงห์โตเพื่อไหว้เจ้าไหว้บรรพบุรุษ
+                    ชาวจีนจะนิยมเอากุ้งในแม่น้ำเยียงซีฮวงโหมาแช่น้ำปลา_มาไหว้บรรพบุรุษ
+                </p>
+                </p>
+                <br><br clear="all">
+                <p style="text-align:left;"><img src="images/กั้ง.jpg" alt="กระเพาะปลา" width=20%" height="25%" />
+                    <b>กั้งแช่น้ำปลา</b>
+                <p style="text-align:left;">
+                    อร่อยชัวร์ครับ กั้งสดๆใหม่ๆ มีไข่เสักนิด ผ่าเปลือกหลังออก ราดน้ำปลาดีๆ นำไปฟรีสให้เย็น
+                    ฟรีสจนได้ที่ ราดน้ำจิ้มแซ่บๆที่มีพริก มะนาว หอมๆ
+                    ความอร่อยของกั้ง เหมือนกุ้งและปูรวมกัน เหนียว นุ่ม หวาน ในเนื้อ
+                    รสชาติของ น้ำจิ้มให้ความแซ่บ ไข่กั้ง มันพะยะค่ะ
+                </p>
+                </p>
+                <br><br clear="all">
+                <p style="text-align:left;"><img src="images/หมู.jpg" alt="กระเพาะปลา" width="20%" height="45%" />
+                    <b>ข้าวผัดหมู</b>
+                <p style="text-align:left;">
+                    ข้าวผัด เป็นอาหารจานเดียวแบบพื้นฐานของเอเชีย เป็นการนำข้าวสวยลงไปผัดคลุกกับซอส หรือน้ำพริก
+                    หรือเครื่องปรุงรสต่างๆ เพื่อให้ได้รสชาติ เช่น ซอสมะเขือเทศ, ซอสพริก, ซีอิ๊วดำ หรือซอสถั่วเหลือง
+                    และมีการใส่เนื้อสัตว์ชนิดต่างๆ ลงไป เช่น หมู, ไก่, ปลาหมึก, ปู และกุ้ง เป็นต้น
+                    โดยเรียกชื่อข้าวผัดชนิดนั้น ๆ ตามชื่อเนื้อสัตว์ที่ใส่ลงไป และอาจใส่ไข่ลงไปผสมด้วย
+                    หรืออาจโปะไข่ดาวแต่งหน้าเพิ่มเติม สำหรับผักที่ใช้นิยมใช้ผักคะน้าและโรยหน้าด้วยต้นหอมสับ
+                    แต่สำหรับข้าวผัดปูจะไม่ใส่คะน้า
+                </p>
+                </p>
+
+            </body>
+        </div>
+
+        <!-- <div class="item3">รายละเอียด</div>   -->
+
+    </div>
+
+</body>
+
+</html>
