@@ -6,8 +6,56 @@
 
 </head>
 
-<h2>WORD GAME</h2>
-<input type="text" id="word">
-<input type="button" value="Go" onClick="gogame();">
+<body>
+    <h2>WORD GAME</h2>
+    <input type="text" id="word">
+    <input type="button" value="Go" onClick="gogame();">
+    <div id="hist"></div>
+    <div id="result"></div>
+
+
+
+    <script>
+        const game_vocabulary = ["BUNNY", "WENNY", "ABCDE", "TESUS", "SNAKE"];
+
+        const random_vocabulary = game_vocabulary[Math.floor(Math.random() * game_vocabulary.length)];
+
+        document.getElementById('word').focus();
+
+        function gogame() {
+
+
+            console.log(random_vocabulary);
+            n = document.getElementById('word').value;
+            h = document.getElementById('hist');
+
+            for (let i = 0; i < 5; i++) {
+                let n = document.getElementById('word').value;
+                let OUTPUT = "";
+                console.log(n.slice(i, i + 1));
+
+                if (random_vocabulary.includes(n.slice(i, i + 1))) {
+                    if (n.slice(i, i + 1) == random_vocabulary.slice(i, i + 1)) {
+                        OUTPUT = n.slice(i, i + 1);
+
+                    } else { OUTPUT = n.slice(i, i + 1) + "No" }
+
+                } else { OUTPUT = n.slice(i, i + 1) + "99" }
+
+
+                h.innerHTML += " | " + OUTPUT + "| ";
+            } h.innerHTML += "<br>";
+
+
+            result = document.getElementById("result");
+            now = document.getElementById('word').value;
+
+            if (now == random_vocabulary) { result.innerHTML = "<p> YOU WIN </p>"; }
+            else { result.innerHTML = "<p>ยังไม่ใช่</p>"; }
+
+        }
+
+    </script>
+</body>
 
 </html>
