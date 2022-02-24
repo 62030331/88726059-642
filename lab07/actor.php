@@ -57,6 +57,7 @@
                                 <th scope='col'>First name</th>
                                 <th scope='col'>Last name</th>
                                 <th scope='col'>Last updated</th>
+                                <th scope='col'>email</th>
                                 <th scope='col'></th>
                             </tr>
                         </thead>
