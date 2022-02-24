@@ -2,7 +2,7 @@
 // ตั้งค่าตัวแปรสำหรับเชื่อมต่อฐานข้อมูล
 $db_host = "localhost";
 $db_user = "root";
-$db_password = "********";
+$db_password = "12345";
 $db_name = "testdb";
 
 // connect ไปยังฐานข้อมูล
@@ -16,5 +16,5 @@ $mysqli->set_charset("utf8");
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 } else {
-     connect success, do nothing
+    // connect success, do nothing
 }
