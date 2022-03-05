@@ -9,7 +9,7 @@ if ($_POST){
     // เตรียมคำสั่ง DELETE
     $sql = "DELETE 
             FROM staff 
-            WHERE id = ?";
+            WHERE stf_code = ?";
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -21,7 +21,7 @@ if ($_POST){
     $id = $_GET['id'];
     $sql = "SELECT *
             FROM staff
-            WHERE id = ?";
+            WHERE stf_code = ?";
 
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -58,7 +58,7 @@ if ($_POST){
             
         </table>
         <form action="staff_delete.php" method="post">
-            <input type="hidden" name="id" value="<?php echo $row->id;?>">
+            <input type="hidden" name="stf_code" value="<?php echo $row->stf_code;?>">
             <input type="submit" value="Confirm delete" class="btn btn-danger">
             <button type="button" class="btn btn-warning" onClick="window.history.back()">Cancel Delete</button>
         </form>
