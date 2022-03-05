@@ -4,12 +4,12 @@ require_once("dbconfig.php");
 // ตรวจสอบว่ามีการ post มาจากฟอร์ม ถึงจะลบ
 if ($_POST){
     // ดึงค่าที่โพสจากฟอร์มตาม name ที่กำหนดในฟอร์มมากำหนดให้ตัวแปร $id
-    $id = $_POST['stf_code'];
+    $id = $_POST['id'];
 
     // เตรียมคำสั่ง DELETE
     $sql = "DELETE 
             FROM staff 
-            WHERE stf_code = ?";
+            WHERE id = ?";
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -18,10 +18,10 @@ if ($_POST){
     header("location: staff.php");
 } else {
     // ดึงค่าที่ส่งผ่านมาทาง query string มากำหนดให้ตัวแปร $id
-    $id = $_GET['stf_code'];
+    $id = $_GET['id'];
     $sql = "SELECT *
             FROM staff
-            WHERE stf_code = ?";
+            WHERE id = ?";
 
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -34,7 +34,7 @@ if ($_POST){
 <html lang="en">
 
 <head>
-    <title>php stf demo</title>
+    <title>delete staff</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -46,7 +46,6 @@ if ($_POST){
     <div class="container">
         <h1>Delete a staff</h1>
         <table class="table table-hover">
-            
             <tr>
                 <th>รหัสพนักงาน </th>
                 <td><?php echo $row->stf_code ;?></td>
@@ -54,11 +53,10 @@ if ($_POST){
             <tr>
                 <th>ชื่อพนักงาน</th>
                 <td><?php echo $row->stf_name;?></td>
-            </tr>
-            
+            </tr>            
         </table>
         <form action="staff_delete.php" method="post">
-            <input type="hidden" name="stf_code" value="<?php echo $row->stf_code;?>">
+            <input type="hidden" name="id" value="<?php echo $row->id;?>">
             <input type="submit" value="Confirm delete" class="btn btn-danger">
             <button type="button" class="btn btn-warning" onClick="window.history.back()">Cancel Delete</button>
         </form>
