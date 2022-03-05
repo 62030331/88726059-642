@@ -4,7 +4,7 @@ require_once("dbconfig.php");
 // ตรวจสอบว่ามีการ post มาจากฟอร์ม ถึงจะลบ
 if ($_POST){
     // ดึงค่าที่โพสจากฟอร์มตาม name ที่กำหนดในฟอร์มมากำหนดให้ตัวแปร $id
-    $id = $_POST['id'];
+    $id = $_POST['stf_code'];
 
     // เตรียมคำสั่ง DELETE
     $sql = "DELETE 
@@ -18,7 +18,7 @@ if ($_POST){
     header("location: staff.php");
 } else {
     // ดึงค่าที่ส่งผ่านมาทาง query string มากำหนดให้ตัวแปร $id
-    $id = $_GET['id'];
+    $id = $_GET['stf_code'];
     $sql = "SELECT *
             FROM staff
             WHERE stf_code = ?";
