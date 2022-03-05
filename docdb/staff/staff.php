@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>php sf demo</title>
+    <title>php staff demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -71,9 +71,9 @@
                 $table.= "<td>$row->stf_code </td>";
                 $table.= "<td>$row->stf_name</td>";
                 $table.= "<td>";
-                $table.= "<a href='staff_edit.php?id=$row->stf_code'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>";
+                $table.= "<a href='staff_edit.php?id=$row->id'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>";
                 $table.= " | ";
-                $table.= "<a href='staff_delete.php?id=$row->stf_code'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
+                $table.= "<a href='staff_delete.php?id=$row->id'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
                 $table.= "</td>";
                 $table.= "</tr>";
             }
