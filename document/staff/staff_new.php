@@ -3,7 +3,7 @@ require_once("dbconfig.php");
 
 // ตรวจสอบว่ามีการ post มาจากฟอร์ม ถึงจะเพิ่ม
 if ($_POST){
-    // $stfid = $_POST['stfid'];
+    $stfid = $_POST['stfid'];
     $stfcode = $_POST['stfcode'];
     $stfname = $_POST['stfname'];
 

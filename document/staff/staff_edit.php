@@ -3,28 +3,24 @@ require_once("dbconfig.php");
 
 // ตรวจสอบว่ามีการ post มาจากฟอร์ม ถึงจะลบ
 if ($_POST){
-    $id = $_POST['id'];
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
-    $Email = $_POST['Email'];
+    $sid    = $_POST['sid'];
+    $stc = $_POST['stc'];
+    $stn = $_POST['stn'];
     
-
-    $sql = "UPDATE actor 
-            SET first_name = ?, 
-                last_name = ?,
-                Email = ?,
-                last_update = CURRENT_TIMESTAMP
-            WHERE actor_id = ?";
+    $sql = "UPDATE staff 
+            SET  stf_code = ?,
+                 stf_name = ?
+            WHERE id = ?";
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("sssi", $fname, $lname,$Email, $id);
+    $stmt->bind_param("ssi", $stc, $stn, $sid);
     $stmt->execute();
 
-    header("location: actor.php");
+    header("location: staff.php");
 } else {
     $id = $_GET['id'];
     $sql = "SELECT *
-            FROM actor
-            WHERE actor_id = ?";
+            FROM staff
+            WHERE id = ?";
 
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -37,7 +33,7 @@ if ($_POST){
 <html lang="en">
 
 <head>
-    <title>php db demo</title>
+    <title>php edit stf demo</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -47,21 +43,21 @@ if ($_POST){
 
 <body>
     <div class="container">
-        <h1>Edit an actor</h1>
-        <form action="editactor.php" method="post">
+        <h1>Edit a staff</h1>
+        <form action="staff_edit.php" method="post">
             <div class="form-group">
-                <label for="fname">First name</label>
-                <input type="text" class="form-control" name="fname" id="fname" value="<?php echo $row->first_name;?>">
+                <label for="sid">id</label>
+                <input type="int" class="form-control" name="sid" id="sid" value="<?php echo $row->id;?>">
             </div>
             <div class="form-group">
-                <label for="lname">Last name</label>
-                <input type="text" class="form-control" name="lname" id="lname" value="<?php echo $row->last_name;?>">
+                <label for="stc">staffcode</label>
+                <input type="text" class="form-control" name="stc" id="stc" value="<?php echo $row->stf_code;?>">
             </div>
             <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="text" class="form-control" name="Email" id="Email" value="<?php echo $row->Email;?>">
+                <label for="stn">staffname</label>
+                <input type="text" class="form-control" name="stn" id="stn" value="<?php echo $row->stf_name;?>">
             </div>
-            <input type="hidden" name="id" value="<?php echo $row->actor_id;?>">
+            <input type="hidden" name="sid" value="<?php echo $row->id;?>">
             <button type="submit" class="btn btn-success">Update</button>
         </form>
 </body>
