@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>คำสั่งแต่งตั้ง</title>
+    <title>หน้าจัดการบุคลากร</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,9 +12,9 @@
 
 <body>
     <div class="container">
-        <h1>คำสั่งแต่งตั้ง | <a href='newactor.php'><span class='glyphicon glyphicon-plus'></span></a></h1>
+    <h1><a href='homepage.php'><span class='glyphicon glyphicon-arrow-left'></span></a> | แก้ไขบุคลากร <a href='staff_new.php'><span class='glyphicon glyphicon-plus'></span></a></h1></h1>
         <form action="#" method="post">
-            <input type="text" name="kw" placeholder="Enter actor name" value="">
+            <input type="text" name="kw" placeholder="Enter staff name" value="">
             <input type="submit">
         </form>
 
@@ -30,9 +30,9 @@
         // ถ้าต้องการแทนที่ค่าของตัวแปร ให้แทนที่ตัวแปรด้วยเครื่องหมาย ? 
         // concat() เป็นฟังก์ชั่นสำหรับต่อข้อความ
         $sql = "SELECT *
-                FROM documents
-                WHERE concat(id, doc_file_name) LIKE ? 
-                ORDER BY id";
+                FROM staff
+                WHERE concat(stf_code , stf_name) LIKE ? 
+                ORDER BY stf_code ";
 
         // Prepare query
         // Bind all variables to the prepared statement
@@ -53,12 +53,10 @@
             $table = "<table class='table table-hover'>
                         <thead>
                             <tr>
-                                <th scope='col'>#</th>
-                                <th scope='col'>First name</th>
-                                <th scope='col'>Last name</th>
-                                <th scope='col'>Last updated</th>
-                                <th scope='col'>Email</th>
-                                <th scope='col'></th>
+                                <th scope='col'>id</th>
+                                <th scope='col'>stf_code</th>
+                                <th scope='col'>stf_name</th>
+                                <th scope='col'>edit/delete</th>
                             </tr>
                         </thead>
                         <tbody>";
@@ -70,14 +68,12 @@
             while($row = $result->fetch_object()){ 
                 $table.= "<tr>";
                 $table.= "<td>" . $i++ . "</td>";
-                $table.= "<td>$row->first_name</td>";
-                $table.= "<td>$row->last_name</td>";
-                $table.= "<td>$row->last_update</td>";
-                $table.= "<td>$row->Email</td>";
+                $table.= "<td>$row->stf_code </td>";
+                $table.= "<td>$row->stf_name</td>";
                 $table.= "<td>";
-                $table.= "<a href='editactor.php?id=$row->actor_id'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>";
+                $table.= "<a href='staff_edit.php?id=$row->id'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>";
                 $table.= " | ";
-                $table.= "<a href='deleteactor.php?id=$row->actor_id'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
+                $table.= "<a href='staff_delete.php?id=$row->id'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
                 $table.= "</td>";
                 $table.= "</tr>";
             }

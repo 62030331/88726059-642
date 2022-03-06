@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>php staff demo</title>
+    <title>หน้าค้นหาคำสั่งแต่งตั้ง</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -12,7 +12,8 @@
 
 <body>
     <div class="container">
-        <h1>Staff | <a href='staff_new.php'><span class='glyphicon glyphicon-plus'></span></a></h1>
+        <h1>คำสั่งแต่งตั้ง | <a href='staff.php'><span class='glyphicon glyphicon-user'></span></a>&nbsp;|&nbsp;<a href='document.php'><span class='glyphicon glyphicon-book'></span></a></h1>
+                        
         <form action="#" method="post">
             <input type="text" name="kw" placeholder="Enter actor name" value="">
             <input type="submit">
@@ -30,9 +31,9 @@
         // ถ้าต้องการแทนที่ค่าของตัวแปร ให้แทนที่ตัวแปรด้วยเครื่องหมาย ? 
         // concat() เป็นฟังก์ชั่นสำหรับต่อข้อความ
         $sql = "SELECT *
-                FROM staff
-                WHERE concat(stf_code , stf_name) LIKE ? 
-                ORDER BY stf_code ";
+                FROM documents
+                WHERE concat(doc_num, doc_title) LIKE ? 
+                ORDER BY doc_num";
 
         // Prepare query
         // Bind all variables to the prepared statement
@@ -54,9 +55,13 @@
                         <thead>
                             <tr>
                                 <th scope='col'>id</th>
-                                <th scope='col'>stf_code</th>
-                                <th scope='col'>stf_name</th>
-                                <th scope='col'>edit/delete</th>
+                                <th scope='col'>เลขที่คำสั่ง</th>
+                                <th scope='col'>ชื่อคำสั่ง</th>
+                                <th scope='col'>วันที่เริ่มต้นคำสั่ง</th>
+                                <th scope='col'>วันสิ้นสุด</th>
+                                <th scope='col'>สถานะ</th>
+                                <th scope='col'>ชื่อไฟล์เอกสาร</th>
+                                <th scope='col'></th>
                             </tr>
                         </thead>
                         <tbody>";
@@ -67,15 +72,13 @@
             // ดึงข้อมูลออกมาทีละแถว และกำหนดให้ตัวแปร row 
             while($row = $result->fetch_object()){ 
                 $table.= "<tr>";
-                $table.= "<td>" . $i++ . "</td>";
-                $table.= "<td>$row->stf_code </td>";
-                $table.= "<td>$row->stf_name</td>";
-                $table.= "<td>";
-                $table.= "<a href='staff_edit.php?id=$row->id'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>";
-                $table.= " | ";
-                $table.= "<a href='staff_delete.php?id=$row->id'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
-                $table.= "</td>";
-                $table.= "</tr>";
+                $table.= "<td >" . $i++ . "</td>";
+                $table.= "<td>$row->doc_num</td>";
+                $table.= "<td>$row->doc_title</td>";
+                $table.= "<td>$row->doc_start_date    </td>";
+                $table.= "<td>$row->doc_to_date</td>";
+                $table.= "<td>$row->doc_status</td>";
+                $table.= "<td>$row->doc_file_name</td>";
             }
 
             $table.= "</tbody>";

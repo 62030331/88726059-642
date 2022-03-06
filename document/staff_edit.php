@@ -3,7 +3,7 @@ require_once("dbconfig.php");
 
 // ตรวจสอบว่ามีการ post มาจากฟอร์ม ถึงจะลบ
 if ($_POST){
-    $sid    = $_POST['sid'];
+    $sid = $_POST['sid'];
     $stc = $_POST['stc'];
     $stn = $_POST['stn'];
     
