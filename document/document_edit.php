@@ -56,28 +56,35 @@ if ($_POST){
         <form action="document_edit.php" method="post">
             
             <div class="form-group">
-                <label for="dcnum">รหัส</label>
+                <label for="dcnum">เลขที่คำสั่ง</label>
                 <input type="text" class="form-control" name="dcnum" id="dcnum"value="<?php echo $row->doc_num ;?>">
             </div>
             <div class="form-group">
-                <label for="dctitle">หัวข้อเอกสาร</label>
+                <label for="dctitle">ชื่อคำสั่ง</label>
                 <input type="text" class="form-control" name="dctitle" id="dctitle"value="<?php echo $row->doc_title;?>">
             </div>
             <div class="form-group">
-                <label for="dcstart">วันที่เอกสาร</label>
+                <label for="dcstart">วันที่เริ่มต้น</label>
                 <input type="date" class="form-control" name="dcstart" id="dcstart"value="<?php echo $row->doc_start_date;?>">
             </div>
             <div class="form-group">
-                <label for="dcto">ถึงวันที่</label>
+                <label for="dcto">วันที่สิ้นสุด</label>
                 <input type="date" class="form-control" name="dcto" id="dcto"value="<?php echo $row->doc_to_date;?>">
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="dcstatus">สถานะ</label>
                 <input type="text" class="form-control" name="dcstatus" id="dcstatus"value="<?php echo $row->doc_status;?>">
+            </div> -->
+            <div class=" form-group">
+                <label for="dcstatus">สถานะ</label>
+                <input type="radio" name="dcstatus" id="dcstatus" value="Active"
+                <?php if($row->doc_status == "Active"){echo "checked";}?>> Active
+                <input type="radio" name="dcstatus" id="dcstatus" value="Expire"
+                <?php if($row->doc_status == "Expire"){echo "checked";}?>> Expire
             </div>
             <div class="form-group">
-                <label for="dcname">ชื่อเอกสาร</label>
-                <input type="text" class="form-control" name="dcname" id="dcname"value="<?php echo $row->doc_file_name;?>">
+                <label for="dcname">อัพไฟล์เอกสาร</label>
+                <input type="file" class="form-control" name="dcname" id="dcname"value="<?php echo $row->doc_file_name;?>">
             </div>
             <input type="hidden" name="dcid" value="<?php echo $row->id;?>">
             <button type="submit" class="btn btn-success">Update</button>

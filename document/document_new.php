@@ -28,7 +28,8 @@ if ($_POST){
     $stmt->execute();
 
     // redirect ไปยัง actor.php
-    header("location: document.php");
+    //header("location: document.php");
+    header("location: addstafftodocument.php?id=".$mysqli->insert_id);
 }
 ?>
 <!DOCTYPE html>
@@ -63,13 +64,20 @@ if ($_POST){
                 <label for="dcto">ถึงวันที่</label>
                 <input type="date" class="form-control" name="dcto" id="dcto">
             </div>
-            <div class="form-group">
+            <div class=" form-group">
                 <label for="dcstatus">สถานะ</label>
-                <input type="text" class="form-control" name="dcstatus" id="dcstatus">
+                <input type="radio" name="dcstatus" id="dcstatus" value="Active">Active
+                
+                <input type="radio" name="dcstatus" id="dcstatus" value="Expire">Expire
+                
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <label for="dcname">ชื่อเอกสาร</label>
                 <input type="text" class="form-control" name="dcname" id="dcname">
+            </div> -->
+            <div class="form-group">
+                <label for="dcname">อัพไฟล์เอกสาร</label>
+                <input type="file" class="form-control" name="dcname" id="dcname">
             </div>
             
             <button type="submit" class="btn btn-success">Save</button>

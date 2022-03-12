@@ -82,6 +82,8 @@
                 $table.= "<a href='document_edit.php?id=$row->id'><span class='glyphicon glyphicon-pencil' aria-hidden='true'></span></a>";
                 $table.= " | ";
                 $table.= "<a href='document_delete.php?id=$row->id'><span class='glyphicon glyphicon-trash' aria-hidden='true'></span></a>";
+                $table.= " | ";
+                $table.= "<a href='addstafftodocument.php?id=$row->id'><span class='glyphicon glyphicon-user' aria-hidden='true'></span></a>";
                 $table.= "</td>";
                 $table.= "</tr>";
             }

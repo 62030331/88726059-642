@@ -44,7 +44,7 @@ if ($_POST){
 
 <body>
     <div class="container">
-        <h1>Delete a staff</h1>
+        <h1><a href='staff.php'><span class='glyphicon glyphicon-arrow-left'></span></a>Delete a staff</h1>
         <table class="table table-hover">
             <tr>
                 <th>รหัสพนักงาน</th>

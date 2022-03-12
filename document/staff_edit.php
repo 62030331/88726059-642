@@ -43,7 +43,7 @@ if ($_POST){
 
 <body>
     <div class="container">
-        <h1>Edit a staff</h1>
+        <h1><a href='staff.php'><span class='glyphicon glyphicon-arrow-left'></span></a>Edit a staff</h1>
         <form action="staff_edit.php" method="post">
             <div class="form-group">
                 <label for="sid">id</label>
